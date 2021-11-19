@@ -1,5 +1,6 @@
 "use strict";
-
+const fs = require("fs");
+const path = require('path');
 // Simulates the kind of delay we see with network or filesystem operations
 const simulateDelay = require("./util/simulate-delay");
 
@@ -9,8 +10,16 @@ module.exports = function makeDataHelpers(db) {
 
     // Saves a tweet to `db`
     saveTweet: function(newTweet, callback) {
+      const filePath = path.join(__dirname, '../data-files/initial-tweets.json');
+      db.tweets.push(newTweet);
+      fs.writeFile(filePath, JSON.stringify(db.tweets, null, 2), (err) => {
+        if (err) {
+          console.log(err);
+        }
+      });
+
       simulateDelay(() => {
-        db.tweets.push(newTweet);
+//        db.tweets.push(newTweet);
         callback(null, true);
       });
     },
@@ -22,6 +31,5 @@ module.exports = function makeDataHelpers(db) {
         callback(null, db.tweets.sort(sortNewestFirst));
       });
     }
-
   };
 }

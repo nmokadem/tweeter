@@ -1,0 +1,82 @@
+
+.all-tweets{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.list-tweets{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  background-color: inherit;
+  margin: 0 auto;
+  margin-bottom : 20px;
+  /* text-align: center; */
+}
+
+
+.tweet {
+  display: flex;
+  flex-direction : column;
+  border: 2px solid;
+  /* margin-top: 10px; */
+}
+
+
+.tweet-line1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-avatar {
+  /* width: 10%; */
+}
+
+.tweet-name{
+  /* width: 70%;   */
+}
+
+.tweet-handle{
+ /* width: 20%;  */
+}
+
+
+.tweet-line2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.tweet-text {
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-bottom-style: groove;
+  border-bottom: 5px solid rgba(53, 3, 3, 0.596);
+  background-color: inherit;
+  outline: none;
+  width:90%;
+  height: 2.5em;
+  font-size: x-large;
+  color:rgb(78, 77, 77);
+  resize: none;
+  overflow:hidden;
+  justify-content: start;
+}
+
+
+
+.tweet-line3 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.tweet-date {
+  width: 70%;
+}
+
+.tweet-logo1 {
+  width: 10%;
+}

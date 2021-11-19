@@ -1,0 +1,33 @@
+@media only screen and (max-width: 1000px) {
+
+  nav {
+    /* background-color: rgb(187, 124, 41);
+    background-image: url("../images/bright-squares.png"); */
+    background: none;
+    /* background: transparent; */
+  }
+
+
+  .container{
+    flex-direction: column;
+    width: 100%;
+    /* margin-top: 0px; */
+  }
+
+  .div-header {
+    width: 100%;
+    margin-top: inherit;
+  }
+
+  header{
+    height: 400px;
+  }
+
+  .all-tweets{
+    width: 100%;
+  }
+
+  .new-tweet{
+    margin-top: 20px;
+  }
+}

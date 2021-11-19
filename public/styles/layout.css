@@ -3,6 +3,15 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+ 
+* {
+  padding: 3px;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -13,6 +22,9 @@ html {
 /*
  * Global layout stuff
  */
+ /* font-family: 'Bungee', cursive;
+font-family: 'Source Sans Pro', sans-serif; */
+
 
 body {
   color: #545149;
@@ -20,6 +32,21 @@ body {
   font-size: 24px;
 }
 
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+.container{
+  display: flex;
+  flex-direction: row ;
+  width: 100%;
+  background-color: inherit;
+  margin: 0 auto;
+  /* margin-top: 150px; */
+  margin-bottom : 120px;
+  /* text-align: center; */
+}
+
+.redText {
+  color: red;
+}

@@ -23,7 +23,9 @@ module.exports = function(DataHelpers) {
       return;
     }
 
-    const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
+
+    const user = req.body.user ? JSON.parse(req.body.user) : userHelper.generateRandomUser();
+
     const tweet = {
       user: user,
       content: {
@@ -34,8 +36,10 @@ module.exports = function(DataHelpers) {
 
     DataHelpers.saveTweet(tweet, (err) => {
       if (err) {
+        //console.log("Data-Helper.js ===> in error");
         res.status(500).json({ error: err.message });
       } else {
+        //console.log("Data-Helper.js ===> not in error");
         res.status(201).send();
       }
     });

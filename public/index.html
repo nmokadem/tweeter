@@ -2,28 +2,83 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+    <title>Tweeter - Home Page</title>
+    <base href="/"> 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/media.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+ 
   </head>
 
   <body>
+
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="nav-logo">tweeter</span>
+      <span class="nav-left-side">
+        <span><strong>Write</strong> a new tweet</span>
+        <span class="fa fa-angle-double-down" style="color: red"></span>
+      </span>
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container"> 
+
+      <!-- Avatar and Name -->
+      <div class="div-header">
+
+        <header>
+          <img src="/images/profile.png"> 
+          <h3><strong>Nasser</strong> Mokadem</h3>
+        </header>
+    
+      </div>
+  
+      <div class="all-tweets">
+        <section class="new-tweet">
+          <form class="" action="/tweets" method="POST" enctype="application/x-www-form-urlencoded">
+            <p id="tweet-errorMsg"></p>
+
+            <input type="hidden" id="user" name="user" 
+              value='{"name":"Nasser Mokadem","avatars":"https://i.imgur.com/73hZDYK.png","handle":"@nmokadem"}'>
+
+            <h3>Compose Tweet</h3>
+              <!--label for="tweet-text">What are you humming about?</label-->
+            <textarea name="text" id="tweet-text" rows="1" cols="140" placeholder="What are you humming about?"></textarea>
+            <div id class="tweet-div">
+              <button class="tweet-btn" type="submit">Tweet</button>
+              <output class="tweet-counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+
+        <!-- Old tweets goes here --> 
+        <section class="list-tweets"></section>
+
+      </div>
+    </main>
+
+    <!-- App JS --> 
+    <script type="text/javascript" src="/scripts/client.js"></script>
+
   </body>
 </html>

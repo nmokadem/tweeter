@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color:#FFFFFF;
+  position : fixed;
+  top : 0;
+  z-index: 1;
+}
+
+nav span {
+  font-size : xx-large;
+  padding-right: 1.5em;
+  padding-left: 1.5em; 
+}
+
+.nav-left-side {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-logo {
+  font-family: Bungee, sans-serif;
+}
