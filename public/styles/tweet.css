@@ -77,6 +77,18 @@
   width: 70%;
 }
 
-.tweet-logo1 {
+.tweet-logo1 .tweet-logo2 .tweet-logo3 {
   width: 10%;
+}
+
+.fa-flag:hover{
+  color: crimson;
+}
+
+.fa-undo:hover{
+  color:  blue;
+}
+
+.fa-heart:hover{
+  color: darkred;
 }

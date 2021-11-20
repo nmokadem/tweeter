@@ -6,10 +6,11 @@
 
 $(document).ready(()=> {
   let $tweetText = $("#tweet-text"); // after that you can just use $tweetText
+  const tweetMsgLength = 140;
+  $tweetText.focus();
 
   // event triggered when user release the key when typing in the tweet text
   $tweetText.on("keyup",function(event) { 
-    const tweetMsgLength = 140;
     const txtAreaLength = $(this).val().length;
  
     // remove any error message when user start typing
@@ -63,6 +64,7 @@ $(document).ready(()=> {
       //console.log('success callback ', data);
       $("#tweet-text").val("");
       $("#tweet-text").focus();
+      $(".tweet-counter").val(tweetMsgLength);
       loadTweets();
     })
     .fail(function(xhr) {
@@ -81,8 +83,42 @@ $(document).ready(()=> {
   })
   
   $("#myBtn").click(() => {
-    $("body").scrollTop = 0; // For Safari
+    $("body").scrollTop = 0;                // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  });
+
+  function loop() {
+    $(".down-arrow").animate({"top": "+= 10px"}, {
+      duration: 1000, 
+      complete: function() {
+          $(".down-arrow").animate({"top": "-= 10px"}, {
+            duration: 1000, 
+            complete: loop
+          });
+      }
+    });
+  }
+  
+  // loop();
+
+  $(".down-arrow").click(() => {
+    $(".new-tweet").slideDown("slow");
+    $("#tweet-text").focus();
+  });
+
+  $(".down-arrow").hover(() => {
+    // $(".new-tweet").slideUp();
+    // $(".new-tweet").slideDown();
+
+    // $(".new-tweet").slideUp("slow");
+    // $(".list-tweets").attr("margin-top","250px");
+    // $(".down-arrow").slideToggle("fast");
+
+    // $('.down-arrow').toggle(function() {
+    //   $(".down-arrow").animate({top: '-=1px'}, 500);
+    // }, function() {
+    //   $(".down-arrow").animate({top: '+=1px'}, 500);
+    // });
   });
   
 });
@@ -114,9 +150,9 @@ const createTweetElement = function(tweet) {
 
     <footer class="tweet-line3">
       <span class="tweet-date">${date_str}</span>
-      <span class="tweet-logo"><i class="far fa-flag"></i>
-        <span class="tweet-logo"><i class="fas fa-undo"></i>
-          <span class="tweet-logo"><i class="far fa-heart"></i></span>
+      <span class="tweet-logo1"><i class="far fa-flag"></i>
+        <span class="tweet-logo2"><i class="fas fa-undo"></i>
+          <span class="tweet-logo3"><i class="far fa-heart"></i></span>
         </span>
       </span>
     </footer>

@@ -33,6 +33,10 @@
   background-color: #4d12ac;
 }
 
+.tweet-btn:hover {
+  cursor: pointer;
+}
+
 .tweet-div{
   display: flex;
   justify-content: space-between;

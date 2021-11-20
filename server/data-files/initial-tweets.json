@@ -8,7 +8,7 @@
     "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-    "created_at": 1636512949545
+    "created_at": 1636314761185
   },
   {
     "user": {
@@ -19,7 +19,7 @@
     "content": {
       "text": "Je pense , donc je suis"
     },
-    "created_at": 1636599349545
+    "created_at": 1636401161185
   },
   {
     "user": {
@@ -30,7 +30,7 @@
     "content": {
       "text": "Dreaming is seeing things you normally won't see"
     },
-    "created_at": 1636685749545
+    "created_at": 1636487561185
   },
   {
     "user": {
@@ -41,7 +41,7 @@
     "content": {
       "text": "Only Scientists know how much they don't know"
     },
-    "created_at": 1636772149545
+    "created_at": 1636573961185
   },
   {
     "user": {
@@ -52,7 +52,7 @@
     "content": {
       "text": "If I tweet you will you tweet me back"
     },
-    "created_at": 1636858549545
+    "created_at": 1636660361185
   },
   {
     "user": {
@@ -63,7 +63,7 @@
     "content": {
       "text": "I am tweeting here!"
     },
-    "created_at": 1636944949545
+    "created_at": 1636746761185
   },
   {
     "user": {
@@ -74,7 +74,7 @@
     "content": {
       "text": "Looking at you looking at me looking at you"
     },
-    "created_at": 1637031349545
+    "created_at": 1636833161185
   },
   {
     "user": {
@@ -85,7 +85,7 @@
     "content": {
       "text": "Don't push too hard or you'll break it"
     },
-    "created_at": 1637117749545
+    "created_at": 1636919561185
   },
   {
     "user": {
@@ -96,6 +96,50 @@
     "content": {
       "text": "I have not seen anything not worth seeing"
     },
-    "created_at": 1637204149545
+    "created_at": 1637005961185
+  },
+  {
+    "user": {
+      "name": "Nasser Mokadem",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@nmokadem"
+    },
+    "content": {
+      "text": "Say what you have and walk out"
+    },
+    "created_at": 1637092361185
+  },
+  {
+    "user": {
+      "name": "Nasser Mokadem",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@nmokadem"
+    },
+    "content": {
+      "text": "Don't care much about ignorance"
+    },
+    "created_at": 1637178761185
+  },
+  {
+    "user": {
+      "name": "Nasser Mokadem",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@nmokadem"
+    },
+    "content": {
+      "text": "Life is too short to take it too seriously"
+    },
+    "created_at": 1637265161185
+  },
+  {
+    "user": {
+      "name": "Nasser Mokadem",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@nmokadem"
+    },
+    "content": {
+      "text": "Don't play a game you know you are going to loose"
+    },
+    "created_at": 1637351561185
   }
 ]

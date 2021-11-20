@@ -4,7 +4,6 @@
     <!-- Meta Information -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <title>Tweeter - Home Page</title>
     <base href="/"> 
     <!-- External CSS -->
@@ -36,8 +35,8 @@
     <nav>
       <span class="nav-logo">tweeter</span>
       <span class="nav-left-side">
-        <span><strong>Write</strong> a new tweet</span>
-        <span class="fa fa-angle-double-down" style="color: red"></span>
+        <span id="write-new-tweet"><strong>Write</strong> a new tweet</span>
+        <span><div class="down-arrow"><span class="fa fa-angle-double-down" style="color: red"></span></div>
       </span>
     </nav>
 
@@ -55,6 +54,7 @@
       </div>
   
       <div class="all-tweets">
+        
         <section class="new-tweet">
           <form class="" action="/tweets" method="POST" enctype="application/x-www-form-urlencoded">
             <p id="tweet-errorMsg"></p>
@@ -77,7 +77,9 @@
 
       </div>
     </main>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <button id="myBtn" title="Go to top">Top</button> 
+    <!-- <span class="fa fa-angle-double-up up-arrow" id="myBtn" style="color: red"></span-->
+
     <!-- App JS --> 
     <script type="text/javascript" src="/scripts/client.js"></script>
 
