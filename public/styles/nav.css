@@ -35,16 +35,24 @@ nav span {
 
 /* The element to apply the animation to */
 .fa-angle-double-down {
-  animation-name: move-up-and-down;
-  animation-duration: 4s;
+  color: red;
+  animation-name: up-and-down;
+  animation-duration: 1s;
   animation-iteration-count: infinite;
 }
 
 /* The animation code */
-@keyframes move-up-and-down {
-  0%   {top:0px;}
-  50%  {top:15px;}
-  100% {top:0px;}
+@keyframes up-and-down {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+  100% { transform: translateY(15px); }
+}
+  /* 0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 100px;
+  } */
   /* from {top: 0px;}
   to {top:15px;} */
 }
