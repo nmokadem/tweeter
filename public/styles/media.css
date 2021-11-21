@@ -1,12 +1,16 @@
-@media only screen and (max-width: 1000px) {
+@media only screen and (min-width: 1000px) {
+  .list-tweets{
+    margin-top: 150px;
+  }
+}
 
+@media only screen and (max-width: 1000px) {
   nav {
     /* background-color: rgb(187, 124, 41);
     background-image: url("../images/bright-squares.png"); */
     background: none;
     /* background: transparent; */
   }
-
 
   .container{
     flex-direction: column;
@@ -25,6 +29,14 @@
 
   .all-tweets{
     width: 100%;
+  }
+
+  .list-tweets{
+    margin-top: 10px;
+  }
+  
+  .list-tweets-with-new{
+    margin-top: 10px;
   }
 
   .new-tweet{

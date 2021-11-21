@@ -9,6 +9,14 @@ $(document).ready(()=> {
   const tweetMsgLength = 140;
   $tweetText.focus();
 
+   // Initial set up new-tweet is hidden and list-tweets has a margin-top of 150px
+   $(".new-tweet").slideUp("slow");
+  //  const width = $(window).width();
+ 
+  //  if (width > 1000) {
+  //    $(".list-tweets").css("margin-top","150px");
+  //  }
+  
   // event triggered when user release the key when typing in the tweet text
   $tweetText.on("keyup",function(event) { 
     const txtAreaLength = $(this).val().length;
@@ -87,40 +95,27 @@ $(document).ready(()=> {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   });
 
-  function loop() {
-    $(".down-arrow").animate({"top": "+= 10px"}, {
-      duration: 1000, 
-      complete: function() {
-          $(".down-arrow").animate({"top": "-= 10px"}, {
-            duration: 1000, 
-            complete: loop
-          });
-      }
-    });
-  }
+  // function loop() {
+  //   $(".down-arrow").animate({"top": "+= 10px"}, {
+  //     duration: 1000, 
+  //     complete: function() {
+  //         $(".down-arrow").animate({"top": "-= 10px"}, {
+  //           duration: 1000, 
+  //           complete: loop
+  //         });
+  //     }
+  //   });
+  // }
   
   // loop();
+
 
   $(".down-arrow").click(() => {
     $(".new-tweet").slideDown("slow");
     $("#tweet-text").focus();
+    $("#list-tweets").removeClass("list-tweets").addClass("list-tweets-with-new");
   });
 
-  $(".down-arrow").hover(() => {
-    // $(".new-tweet").slideUp();
-    // $(".new-tweet").slideDown();
-
-    // $(".new-tweet").slideUp("slow");
-    // $(".list-tweets").attr("margin-top","250px");
-    // $(".down-arrow").slideToggle("fast");
-
-    // $('.down-arrow').toggle(function() {
-    //   $(".down-arrow").animate({top: '-=1px'}, 500);
-    // }, function() {
-    //   $(".down-arrow").animate({top: '+=1px'}, 500);
-    // });
-  });
-  
 });
 
 // to secure against CSS all text that are displayed need to be escaped
@@ -176,7 +171,7 @@ const loadTweets = () => {
       thisHtml += createTweetElement(tweet);
     }
 
-    $(".list-tweets").html(thisHtml);
+    $("#list-tweets").html(thisHtml);
   })
   .fail(function(xhr) {
     //alert("An error occurred loading your tweets! Call the Mentors!");
