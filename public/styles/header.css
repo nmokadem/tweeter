@@ -1,17 +1,17 @@
-.div-header{
+.div-header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width : 40%;
-  margin-top:150px;
+  width: 40%;
+  margin-top: 150px;
 }
 
 header {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  background-color: rgb(187, 124, 41);
+  align-items: center;
+  background-color: #bb7c29;
   background-image: url("../images/bright-squares.png");
   height: 600px;
   width: 100%;

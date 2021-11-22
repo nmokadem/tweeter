@@ -1,30 +1,40 @@
-.all-tweets {
+$all-tweets-width: 60%;
+$list-tweets-width: 90%;
+$list-tweets-margin-bottom: 20px;
+$tweet-margin-top: 5px;
+$tweet-text-width: 90%;
+$tweet-text-height: 2.5em;
+
+.all-tweets{
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: $all-tweets-width;
 }
 
-.list-tweets {
+.list-tweets{
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: $list-tweets-width;
   background-color: inherit;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom : $list-tweets-margin-bottom;
   /* text-align: center; */
 }
 
+
 .tweet {
   display: flex;
-  flex-direction: column;
+  flex-direction : column;
   border: 2px solid;
-  margin-top: 5px;
+  margin-top: $tweet-margin-top;
 }
+
 
 .tweet-line1 {
   display: flex;
   justify-content: space-between;
 }
+
 
 .tweet-line2 {
   display: flex;
@@ -40,14 +50,16 @@
   border-bottom: 5px solid rgba(53, 3, 3, 0.596);
   background-color: inherit;
   outline: none;
-  width: 90%;
-  height: 2.5em;
+  width: $tweet-text-width;
+  height: $tweet-text-height;
   font-size: x-large;
-  color: #4e4d4d;
+  color:rgb(78, 77, 77);
   resize: none;
-  overflow: hidden;
+  overflow:hidden;
   justify-content: start;
 }
+
+
 
 .tweet-line3 {
   display: flex;
@@ -63,14 +75,14 @@
   width: 10%;
 }
 
-.fa-flag:hover {
+.fa-flag:hover{
   color: crimson;
 }
 
-.fa-undo:hover {
-  color: blue;
+.fa-undo:hover{
+  color:  blue;
 }
 
-.fa-heart:hover {
+.fa-heart:hover{
   color: darkred;
 }

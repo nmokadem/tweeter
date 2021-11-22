@@ -1,0 +1,48 @@
+$div-header-width : 40%;
+$div-header-margin-top: 150px;
+$header-background-color: rgb(187, 124, 41);
+$header-height: 600px;
+$header-width: 100%;
+$header-color: white;
+
+@mixin flex-column($content: flex-start){
+  display: flex;
+  flex-direction: column;
+  justify-content: $content;
+}
+
+.div-header{
+  @include flex-column;
+  width : $div-header-width;
+  margin-top: $div-header-margin-top;
+}
+
+header {
+  @include flex-column($content: center);
+  align-items: center;
+  background-color: $header-background-color;
+  background-image: url("../images/bright-squares.png");
+  height: $header-height;
+  width: $header-width;
+  color: $header-color;
+}
+
+// .div-header{
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   width : $div-header-width;
+//   margin-top: $div-header-margin-top;
+// }
+
+// header {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: $header-background-color;
+//   background-image: url("../images/bright-squares.png");
+//   height: $header-height;
+//   width: $header-width;
+//   color: $header-color;
+// }

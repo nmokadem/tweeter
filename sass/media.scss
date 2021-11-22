@@ -1,8 +1,9 @@
 @media only screen and (min-width: 1000px) {
-  .list-tweets {
+  .list-tweets{
     margin-top: 150px;
   }
 }
+
 @media only screen and (max-width: 1000px) {
   nav {
     /* background-color: rgb(187, 124, 41);
@@ -11,7 +12,7 @@
     /* background: transparent; */
   }
 
-  .container {
+  .container{
     flex-direction: column;
     width: 100%;
     /* margin-top: 0px; */
@@ -22,23 +23,23 @@
     margin-top: inherit;
   }
 
-  header {
+  header{
     height: 400px;
   }
 
-  .all-tweets {
+  .all-tweets{
     width: 100%;
   }
 
-  .list-tweets {
+  .list-tweets{
+    margin-top: 10px;
+  }
+  
+  .list-tweets-with-new{
     margin-top: 10px;
   }
 
-  .list-tweets-with-new {
-    margin-top: 10px;
-  }
-
-  .new-tweet {
+  .new-tweet{
     margin-top: 20px;
   }
 }

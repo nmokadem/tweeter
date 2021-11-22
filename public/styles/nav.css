@@ -6,16 +6,15 @@ nav {
   height: 120px;
   width: 100%;
   background-color: #4056A1;
-  color:#FFFFFF;
-  position : fixed;
+  color: #FFFFFF;
+  position: fixed;
   /* top : 0; */
   z-index: 1;
 }
-
 nav span {
-  font-size : xx-large;
+  font-size: xx-large;
   padding-right: 1.5em;
-  padding-left: 1.5em; 
+  padding-left: 1.5em;
 }
 
 .nav-left-side {
@@ -28,11 +27,6 @@ nav span {
   font-family: Bungee, sans-serif;
 }
 
-#write-new-tweet{
-  /* position: fixed; */
-  
-}
-
 /* The element to apply the animation to */
 .fa-angle-double-down {
   color: red;
@@ -43,20 +37,16 @@ nav span {
 
 /* The animation code */
 @keyframes up-and-down {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-  100% { transform: translateY(15px); }
-
-  /* 0%, 100% {
-    bottom: 0;
+  0% {
+    transform: translateY(0);
   }
   50% {
-    bottom: 100px;
-  } */
-  /* from {top: 0px;}
-  to {top:15px;} */
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(15px);
+  }
 }
-
-.fa-angle-double-down{
+.fa-angle-double-down {
   cursor: pointer;
 }

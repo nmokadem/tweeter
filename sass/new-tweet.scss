@@ -1,0 +1,74 @@
+$hover-cursor: pointer;
+$font-family: Bungee sans-serif;
+
+$new-tweet-width: 90%;
+$new-tweet-margin-bottom: 30px;
+$new-tweet-margin-top: 150px;
+$new-tweet-margin-left: 50px;
+$tweet-text-color: rgb(78, 77, 77);
+$tweet-btn-font-family: Bungee;
+$tweet-btn-font-size: xx-large;
+$tweet-btn-color: white;
+$tweet-btn-background-color: #4d12ac;
+$tweet-errorMsg-color: red;
+$tweet-counter-font-family: Bungee sans-serif;
+$tweet-counter-font-size: xx-large;
+
+.new-tweet{
+  width : $new-tweet-width;
+  margin-bottom: $new-tweet-margin-bottom;
+  margin-top: $new-tweet-margin-top;
+  margin-left: $new-tweet-margin-left;
+  
+}
+
+.tweet-form {
+  display: flex;
+}
+
+#tweet-text{
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-bottom-style: groove;
+  border-bottom: 5px solid rgba(53, 3, 3, 0.596);
+  background-color: inherit;
+  outline: none;
+  width: 100%;
+  height: 2.5em;
+  font-size: x-large;
+  color: $tweet-text-color;
+  resize: none;
+  overflow:hidden
+}
+
+.tweet-btn {
+  font-family: $tweet-btn-font-family;
+  font-size: $tweet-btn-font-size;
+  color: $tweet-btn-color;
+  background-color: $tweet-btn-background-color;
+}
+
+.tweet-btn:hover {
+  cursor: $hover-cursor;
+}
+
+.tweet-div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-counter {
+  font-family: $font-family;
+  font-size: $tweet-counter-font-size;
+}
+
+.tweet-errorMsg {
+  margin: auto;
+  padding: 15px;
+  width: 50%;
+  border: 3px solid red;
+  color: $tweet-errorMsg-color;
+  text-align: center;
+  font-family: Bungee;
+}

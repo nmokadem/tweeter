@@ -9,8 +9,8 @@ $(document).ready(()=> {
   const tweetMsgLength = 140;
   $tweetText.focus();
 
-   // Initial set up new-tweet is hidden and list-tweets has a margin-top of 150px
-   $(".new-tweet").slideUp("slow");
+  // Initial set up new-tweet is hidden and list-tweets has a margin-top of 150px
+  $(".new-tweet").slideUp("slow");
   //  const width = $(window).width();
  
   //  if (width > 1000) {
@@ -18,7 +18,7 @@ $(document).ready(()=> {
   //  }
   
   // event triggered when user release the key when typing in the tweet text
-  $tweetText.on("keyup",function(event) { 
+  $tweetText.on("keyup",function(event) {
     const txtAreaLength = $(this).val().length;
  
     // remove any error message when user start typing
@@ -40,7 +40,7 @@ $(document).ready(()=> {
   });
 
   // triggered when user press the tweet button
-  $( "form" ).submit(function( event ) {
+  $("form").submit(function(event) {
     event.preventDefault();
     $("#tweet-errorMsg").removeClass("tweet-errorMsg").text("").slideUp(1000);
 
@@ -64,22 +64,22 @@ $(document).ready(()=> {
     let dataForm = $("form").serialize();
 
     $.ajax({
-      url: $( "form" ).attr("action"),
+      url: $("form").attr("action"),
       method: "POST",
       data: dataForm,          //$("form textarea").serialize(),           //only input
     })
-    .done(function(data) {
-      //console.log('success callback ', data);
-      $("#tweet-text").val("");
-      $("#tweet-text").focus();
-      $(".tweet-counter").val(tweetMsgLength);
-      loadTweets();
-    })
-    .fail(function(xhr) {
-      //alert("An error occurred posting your tweet! Call the Mentors!");
-      $("#tweet-errorMsg").addClass("tweet-errorMsg").text("An error occurred posting your tweet! Call the Mentors!").slideDown(1000);
-      console.log('error callback ', xhr);
-    });
+      .done(function(data) {
+        //console.log('success callback ', data);
+        $("#tweet-text").val("");
+        $("#tweet-text").focus();
+        $(".tweet-counter").val(tweetMsgLength);
+        loadTweets();
+      })
+      .fail(function(xhr) {
+        //alert("An error occurred posting your tweet! Call the Mentors!");
+        $("#tweet-errorMsg").addClass("tweet-errorMsg").text("An error occurred posting your tweet! Call the Mentors!").slideDown(1000);
+        console.log('error callback ', xhr);
+      });
   });
 
   $(window).scroll(()=>{
@@ -88,7 +88,7 @@ $(document).ready(()=> {
     } else {
       $("#myBtn").hide();  //css("display","block");
     }
-  })
+  });
   
   $("#myBtn").click(() => {
     $("body").scrollTop = 0;                // For Safari
@@ -97,10 +97,10 @@ $(document).ready(()=> {
 
   // function loop() {
   //   $(".down-arrow").animate({"top": "+= 10px"}, {
-  //     duration: 1000, 
+  //     duration: 1000,
   //     complete: function() {
   //         $(".down-arrow").animate({"top": "-= 10px"}, {
-  //           duration: 1000, 
+  //           duration: 1000,
   //           complete: loop
   //         });
   //     }
@@ -116,91 +116,91 @@ $(document).ready(()=> {
     $("#list-tweets").removeClass("list-tweets").addClass("list-tweets-with-new");
   });
 
-});
+  // to secure against CSS all text that are displayed need to be escaped
+  const escape = function(str) {   // to defend against cross site scripting CSS
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
-// to secure against CSS all text that are displayed need to be escaped
-const escape = function (str) {   // to defend against cross site scripting CSS
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
+  // create a tweet element
+  const createTweetElement = function(tweet) {
 
-// create a tweet element
-const createTweetElement = function(tweet) {
+    const dateStr = timeago.format(tweet.created_at, 'pt_BR');
 
-  const date_str = timeago.format(tweet.created_at, 'pt_BR');
-
-  let html = `
-  <article class="tweet">
-    <section class="tweet-line1">
-      <span class="tweet-avatar"><img src='${escape(tweet.user.avatars)}'> 
-        <span class="tweet_name">${escape(tweet.user.name)}</span>
-      </span>
-      <span class="tweet-handle">${escape(tweet.user.handle)}</span>
-    </section>
-
-    <span class="tweet-line2">
-      <span class="tweet-text">${escape(tweet.content.text)}</span>
-    </span>
-
-    <footer class="tweet-line3">
-      <span class="tweet-date">${date_str}</span>
-      <span class="tweet-logo1"><i class="far fa-flag"></i>
-        <span class="tweet-logo2"><i class="fas fa-undo"></i>
-          <span class="tweet-logo3"><i class="far fa-heart"></i></span>
+    let html = `
+    <article class="tweet">
+      <section class="tweet-line1">
+        <span class="tweet-avatar"><img src='${escape(tweet.user.avatars)}'> 
+          <span class="tweet_name">${escape(tweet.user.name)}</span>
         </span>
+        <span class="tweet-handle">${escape(tweet.user.handle)}</span>
+      </section>
+
+      <span class="tweet-line2">
+        <span class="tweet-text">${escape(tweet.content.text)}</span>
       </span>
-    </footer>
-</article>
-`;
- return html;
-}
 
-// load the tweets form initial-tweets.json on the server
-const loadTweets = () => {
-  let thisHtml = '';
+      <footer class="tweet-line3">
+        <span class="tweet-date">${dateStr}</span>
+        <span class="tweet-logo1"><i class="far fa-flag"></i>
+          <span class="tweet-logo2"><i class="fas fa-undo"></i>
+            <span class="tweet-logo3"><i class="far fa-heart"></i></span>
+          </span>
+        </span>
+      </footer>
+    </article>`;
+    return html;
+  };
 
-  $.ajax({
-    url: "/tweets",
-    method: "GET",
-  })
-  .done(function(data) {
-    const tweets = data.sort((tweet1, tweet2) => tweet2.created_at - tweet1.created_at);
+  // load the tweets form initial-tweets.json on the server
+  const loadTweets = () => {
+    let thisHtml = '';
 
-    for (let tweet of tweets) {
-      thisHtml += createTweetElement(tweet);
-    }
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+    })
+      .done(function(data) {
+        const tweets = data.sort((tweet1, tweet2) => tweet2.created_at - tweet1.created_at);
 
-    $("#list-tweets").html(thisHtml);
-  })
-  .fail(function(xhr) {
-    //alert("An error occurred loading your tweets! Call the Mentors!");
-    $("#tweet-errorMsg").addClass("tweet-errorMsg").text("An error occurred loading your tweets! Call the Mentors!").slideDown(1000);
-    console.log('error callback ', xhr);
-  });
-}
+        for (let tweet of tweets) {
+          thisHtml += createTweetElement(tweet);
+        }
 
-loadTweets();
+        $("#list-tweets").html(thisHtml);
+      })
+      .fail(function(xhr) {
+        //alert("An error occurred loading your tweets! Call the Mentors!");
+        $("#tweet-errorMsg").addClass("tweet-errorMsg").text("An error occurred loading your tweets! Call the Mentors!").slideDown(1000);
+        console.log('error callback ', xhr);
+      });
+  };
+
+  loadTweets();
 
 
 
-// //Get the button:
-// mybutton = document.getElementById("myBtn");
+  // //Get the button:
+  // mybutton = document.getElementById("myBtn");
 
-// // When the user scrolls down 20px from the top of the document, show the button
-// window.onscroll = function() {scrollFunction()};
+  // // When the user scrolls down 20px from the top of the document, show the button
+  // window.onscroll = function() {scrollFunction()};
 
-// function scrollFunction() {
-//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-//     mybutton.style.display = "block";
-//   } else {
-//     mybutton.style.display = "none";
-//   }
-// }
+  // function scrollFunction() {
+  //   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  //     mybutton.style.display = "block";
+  //   } else {
+  //     mybutton.style.display = "none";
+  //   }
+  // }
 
-// // When the user clicks on the button, scroll to the top of the document
-// function topFunction() {
-//   document.body.scrollTop = 0; // For Safari
-//   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-// }
+  // // When the user clicks on the button, scroll to the top of the document
+  // function topFunction() {
+  //   document.body.scrollTop = 0; // For Safari
+  //   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  // }
+
+
+});
 
