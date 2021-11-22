@@ -1,9 +1,9 @@
 # Tweeter Project
 
 
-!["Desktop Tweeting"](https://github.com/nmokadem/tweeter/blob/master/images/desktop.png)
+!["Desktop Tweeting"](https://github.com/nmokadem/tweeter/blob/master/public/images/desktop.png)
 
-!["Mobile Tweeting"](https://github.com/nmokadem/tweeter/blob/master/images/mobile.png)
+!["Mobile Tweeting"](https://github.com/nmokadem/tweeter/blob/master/public/images/mobile.png)
 
 Tweeter is a simple, single-page Twitter clone.
 
